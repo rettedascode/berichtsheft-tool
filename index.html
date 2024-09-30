@@ -1,1 +1,123 @@
-<h1>Test</h1>
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ausbildungsberichtsheft</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    function showTab(tabId) {
+      const tabs = document.querySelectorAll('.tab-content');
+      tabs.forEach(tab => {
+        if (tab.id === tabId) {
+          tab.classList.remove('hidden');
+        } else {
+          tab.classList.add('hidden');
+        }
+      });
+    }
+  </script>
+</head>
+<body class="bg-gray-100">
+
+  <header class="bg-blue-600 text-white p-4">
+    <div class="container mx-auto flex justify-between items-center">
+      <div class="text-2xl font-bold">Firma Logo</div>
+      <div class="text-lg">Ausbildungsberichtsheft</div>
+      <div class="text-lg">Profil | Logout</div>
+    </div>
+  </header>
+
+  <nav class="bg-blue-500 text-white py-2">
+    <div class="container mx-auto flex space-x-6">
+      <a href="#" class="hover:underline">Dashboard</a>
+      <a href="#" class="hover:underline">Berichte hinzufügen</a>
+      <a href="#" class="hover:underline">Berichte verwalten</a>
+      <a href="#" class="hover:underline">Ausbildungsplan</a>
+      <a href="#" class="hover:underline">Einstellungen</a>
+    </div>
+  </nav>
+
+  <div class="container mx-auto mt-8">
+    <div class="flex space-x-4">
+      <button onclick="showTab('dashboard')" class="bg-blue-600 text-white py-2 px-4 rounded-lg focus:outline-none">Dashboard</button>
+      <button onclick="showTab('add-report')" class="bg-blue-600 text-white py-2 px-4 rounded-lg focus:outline-none">Bericht hinzufügen</button>
+      <button onclick="showTab('manage-reports')" class="bg-blue-600 text-white py-2 px-4 rounded-lg focus:outline-none">Berichte verwalten</button>
+    </div>
+
+    <main class="mt-4">
+      <section id="dashboard" class="tab-content mb-8">
+        <h2 class="text-3xl font-bold mb-4">Dashboard</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div class="bg-white p-6 rounded-lg shadow-md">
+            <h3 class="text-xl font-semibold mb-4">Monatsübersicht</h3>
+            <p>Hier könnte ein Kalender stehen, der die Berichte anzeigt.</p>
+          </div>
+
+          <div class="bg-white p-6 rounded-lg shadow-md">
+            <h3 class="text-xl font-semibold mb-4">Status</h3>
+            <p>Berichte eingereicht: <strong>10 von 12</strong></p>
+          </div>
+        </div>
+      </section>
+
+      <section id="add-report" class="tab-content hidden mb-8">
+        <h2 class="text-3xl font-bold mb-4">Bericht hinzufügen</h2>
+        <div class="bg-white p-6 rounded-lg shadow-md">
+          <form action="#" method="POST">
+            <label class="block mb-2 text-lg">Datum:</label>
+            <input type="date" class="w-full border p-2 mb-4 rounded-lg" required>
+
+            <label class="block mb-2 text-lg">Abteilung/Arbeitsbereich:</label>
+            <input type="text" class="w-full border p-2 mb-4 rounded-lg" placeholder="Z. B. IT-Abteilung" required>
+
+            <label class="block mb-2 text-lg">Beschreibung der Tätigkeiten:</label>
+            <textarea class="w-full border p-2 mb-4 rounded-lg" rows="4" placeholder="Tätigkeiten beschreiben..." required></textarea>
+
+            <label class="block mb-2 text-lg">Erlernte Fähigkeiten:</label>
+            <input type="text" class="w-full border p-2 mb-4 rounded-lg" placeholder="Z. B. Programmieren">
+
+            <label class="block mb-2 text-lg">Arbeitsstunden:</label>
+            <input type="number" class="w-full border p-2 mb-4 rounded-lg" placeholder="Z. B. 8" required>
+
+            <label class="block mb-2 text-lg">Anhang hochladen:</label>
+            <input type="file" class="w-full border p-2 mb-4 rounded-lg">
+
+            <button type="submit" class="bg-blue-600 text-white py-2 px-4 rounded-lg hover:bg-blue-700">
+              Bericht speichern
+            </button>
+          </form>
+        </div>
+      </section>
+
+      <section id="manage-reports" class="tab-content hidden mb-8">
+        <h2 class="text-3xl font-bold mb-4">Berichte verwalten</h2>
+        <div class="bg-white p-6 rounded-lg shadow-md">
+          <table class="w-full table-auto">
+            <thead>
+              <tr>
+                <th class="px-4 py-2">Datum</th>
+                <th class="px-4 py-2">Abteilung</th>
+                <th class="px-4 py-2">Status</th>
+                <th class="px-4 py-2">Aktionen</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="border px-4 py-2">01.09.2024</td>
+                <td class="border px-4 py-2">IT-Abteilung</td>
+                <td class="border px-4 py-2">Eingereicht</td>
+                <td class="border px-4 py-2">
+                  <a href="#" class="text-blue-500 hover:underline">Bearbeiten</a> | 
+                  <a href="#" class="text-red-500 hover:underline">Löschen</a>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+    </main>
+  </div>
+
+</body>
+</html>
