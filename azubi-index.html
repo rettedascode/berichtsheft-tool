@@ -6,25 +6,57 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ausbildungsberichtsheft</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        figure.flex {
+            justify-content: center;
+        }
+        
+        figure.flex>figcaption {
+            width: 100%;
+        }
+    </style>
 </head>
 
-<body class="h-screen p-2">
-    <div class="w-11/12 m-auto" style="background-color: #CF3476; height: 90vh;">
+<body class="h-screen">
+    <div class="h-screen" style="background-color: #CF3476;">
         <div class="p-2 flex justify-between">
             <figure class="flex">
-                <img class="size-10 rounded-full" src="https://media.istockphoto.com/id/1300845620/vector/user-icon-flat-isolated-on-white-background-user-symbol-vector-illustration.jpg?s=612x612&w=0&k=20&c=yBeyba0hUkh14_jgv1OKqIH0CCSWU_4ckRkAoy2p73o=" alt="image description">
-                <figcaption class="size-10 mt-2 text-sm text-center text-white px-4 font-bold">Azubi</figcaption>
+                <img class="size-12 rounded-full" src="https://media.istockphoto.com/id/1300845620/vector/user-icon-flat-isolated-on-white-background-user-symbol-vector-illustration.jpg?s=612x612&w=0&k=20&c=yBeyba0hUkh14_jgv1OKqIH0CCSWU_4ckRkAoy2p73o=" alt="image description">
+                <figcaption class="size-10 mt-2 text-sm text-center text-white px-4 font-bold">Auszubildender</figcaption>
             </figure>
-            <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full">
+            <a class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full" href="./nachweis-signen.html">
             Ausbildungsnachweiß erstellen
-          </button>
+            </a>
+        </div>
+        <h1 class="text-white text-lg font-semibold text-center my-2.5">Ihre Ausbildungsnachweiße</h1>
+
+        <div class="flex items-center p-4 w-2/4 mx-auto text-sm text-blue-800 rounded-lg bg-blue-50" role="alert">
+            <svg class="flex-shrink-0 inline w-4 h-4 me-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
+              <path d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5ZM9.5 4a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3ZM12 15H8a1 1 0 0 1 0-2h1v-3H8a1 1 0 0 1 0-2h2a1 1 0 0 1 1 1v4h1a1 1 0 0 1 0 2Z"/>
+            </svg>
+            <span class="sr-only">Info</span>
+            <div>
+                <span class="font-medium">Hallo Vorname Nachname !</span> Die Übersicht zeigt die Wochensberichte von dir. Die Berichte, die unterschrieben sind, sind mit einem Hacken markiert.
+            </div>
         </div>
 
-        <div class="mt-28 mx-auto w-full">
-            <ul class="max-w-md space-y-1 list-none list-inside text-black bg-white mx-2 p-2 mx-auto">
+        <div class="mt-12 mx-auto w-full">
+            <ul class="w-2/4 space-y-1 list-none list-inside text-black bg-white mx-2 p-2 mx-auto rounded-lg">
                 <li class="flex justify-between">
                     KW 000
-                    <input type="checkbox" name="" id="">
+                    <input type="checkbox" name="" id="" checked>
+                </li>
+                <li class="flex justify-between">
+                    KW 000
+                    <input type="checkbox" name="" id="" checked>
+                </li>
+                <li class="flex justify-between">
+                    KW 000
+                    <input type="checkbox" name="" id="" checked>
+                </li>
+                <li class="flex justify-between">
+                    KW 000
+                    <input type="checkbox" name="" id="" checked>
                 </li>
                 <li class="flex justify-between">
                     KW 000
@@ -42,13 +74,16 @@
                     KW 000
                     <input type="checkbox" name="" id="">
                 </li>
-                <li class="flex justify-between">
-                    KW 000
-                    <input type="checkbox" name="" id="">
                 </li>
                 <li class="flex justify-between">
                     KW 000
                     <input type="checkbox" name="" id="">
+                </li>
+                </li>
+                <li class="flex justify-between">
+                    KW 000
+                    <input type="checkbox" name="" id="">
+                </li>
                 </li>
                 <li class="flex justify-between">
                     KW 000

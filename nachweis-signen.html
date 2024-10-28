@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ausbildungsberichtsheft</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/flowbite@2.5.2/dist/flowbite.min.js"></script>
+
+    <style>
+        figure.flex {
+            justify-content: center;
+        }
+        
+        figure.flex>figcaption {
+            width: 100%;
+        }
+    </style>
+</head>
+
+<body class="">
+    <div class="" style="background-color: #CF3476;">
+        <div class="p-2 flex justify-between">
+            <figure class="flex">
+                <a href="./azubi-index.html" class="w-full">
+                    <img class="size-12 rounded-full" src="https://media.istockphoto.com/id/1300845620/vector/user-icon-flat-isolated-on-white-background-user-symbol-vector-illustration.jpg?s=612x612&w=0&k=20&c=yBeyba0hUkh14_jgv1OKqIH0CCSWU_4ckRkAoy2p73o=" alt="image description">
+                </a>
+                <figcaption class="size-10 mt-2 text-sm text-center text-white px-4 font-bold">Auszubildender
+                </figcaption>
+            </figure>
+            <a class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 w-48 text-center rounded-full" href="./azubi-index.html">
+                Zurück
+                </a>
+        </div>
+
+
+        <h1 class="text-white text-lg font-semibold text-center my-2.5">Nachweis anlegen</h1>
+
+        <div class="flex items-center p-4 w-2/4 mx-auto text-sm text-blue-800 rounded-lg bg-blue-50" role="alert">
+            <svg class="flex-shrink-0 inline w-4 h-4 me-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
+              <path d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5ZM9.5 4a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3ZM12 15H8a1 1 0 0 1 0-2h1v-3H8a1 1 0 0 1 0-2h2a1 1 0 0 1 1 1v4h1a1 1 0 0 1 0 2Z"/>
+            </svg>
+            <span class="sr-only">Info</span>
+            <div>
+                Hier können Sie die Wochensberichten erstellen, füllen Sie bitte alle Felder unten und legen Sie das Wochensbericht an.
+            </div>
+        </div>
+
+        <div class="flex justify-center p-6 space-x-4">
+
+
+            <!-- Main Column -->
+            <div class="space-y-4 w-2/4 p-2.5">
+                <div class="">
+
+                    <!-- Input Box with Button -->
+                    <div class="relative w-full my-2.5">
+                        <input datepicker type="text" placeholder="Datum auswählen" class="w-full h-12 bg-purple-100 rounded-lg shadow-md px-4 focus:outline-none" />
+                        <button class="absolute right-2 bg-purple-200 rounded-full p-2 shadow-md">
+                                <span class="text-2xl font-bold text-purple-500">+</span>
+                            </button>
+                    </div>
+
+
+
+                </div>
+                <!-- Montag -->
+                <div class="flex justify-between items-center bg-gray-200 p-4 rounded-lg">
+                    <span>Montag</span>
+                    <input value="Ganz hart gearbeitet" class="border border-gray-300 p-2.5 text-sm rounded-lg w-2/4">
+                </div>
+                <!-- Dienstag -->
+                <div class="flex justify-between items-center bg-gray-200 p-4 rounded-lg">
+                    <span>Dienstag</span>
+                    <input value="Ganz hart ausgebeutet" class="border border-gray-300 p-2.5 text-sm rounded-lg w-2/4">
+                </div>
+                <!-- Mittwoch -->
+                <div class="flex justify-between items-center bg-gray-200 p-4 rounded-lg">
+                    <span>Mittwoch</span>
+                    <input value="Ganz hart gefoltert" class="border border-gray-300 p-2.5 text-sm rounded-lg w-2/4">
+                </div>
+                <!-- Donnerstag -->
+                <div class="flex justify-between items-center bg-gray-200 p-4 rounded-lg">
+                    <span>Donnerstag</span>
+                    <input value="Ganz hart zurückgeschrien" class="border border-gray-300 p-2.5 text-sm rounded-lg w-2/4">
+                </div>
+                <!-- Freitag -->
+                <div class="flex justify-between items-center bg-gray-200 p-4 rounded-lg">
+                    <span>Freitag</span>
+                    <input value="Ganz hart geflohen" class="border border-gray-300 p-2.5 text-sm rounded-lg w-2/4">
+                </div>
+                <!-- "Anlegen" Button -->
+                <button class="bg-purple-700 text-white font-semibold py-2 px-6 rounded-full shadow-md w-full">
+                        Anlegen
+                    </button>
+            </div>
+
+            <!-- Side Column -->
+            <div class="mt-5">
+                <textarea class="h-5/6 rounded-lg p-1">Weniger meckern, mehr arbeiten.</textarea>
+            </div>
+        </div>
+
+
+
+    </div>
+</body>
+
+</html>
