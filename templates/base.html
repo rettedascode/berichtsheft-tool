@@ -46,9 +46,9 @@
 <!--    </div>-->
 <!--</nav>-->
 
-  <header class="w-75 mx-auto text-center text-lg mt-3 mb-4 text-white">
-    {% block header %}{% endblock %}
-  </header>
+<!--  <header class="w-75 mx-auto text-center text-lg mt-3 mb-4 text-white">-->
+<!--    {% block header %}{% endblock %}-->
+<!--  </header>-->
 
  {% with messages = get_flashed_messages(with_categories=true) %}
   {% if messages %}
@@ -61,7 +61,7 @@
 {% endwith %}
 
 
-<section class="content mx-auto w-75 my-4 pt-4">
+<section class="content mx-auto w-75">
   {% block content %}{% endblock %}
 </section>
 
