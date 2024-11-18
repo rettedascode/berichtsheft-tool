@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}{% endblock %} - Flask</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    {% block headScript %} {% endblock %}
+    {% block headLink %} {% endblock %}
+</head>
+<body class="bg-pink-600">
+<!-- <nav class="navbar navbar-expand-lg navbar-light bg-primary">-->
+<!--    <div class="container-fluid">-->
+<!--        <a class="navbar-brand" href="#">{{ config['SITE_TITLE'] }}</a>-->
+<!--        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">-->
+<!--            <span class="navbar-toggler-icon"></span>-->
+<!--        </button>-->
+
+<!--        <div class="collapse navbar-collapse" id="navbarSupportedContent">-->
+<!--            <ul class="navbar-nav me-auto mb-2 mb-lg-0">-->
+
+<!--                {% for item in navbar %}-->
+<!--                {% if item.sublinks %}-->
+<!--                <li class="nav-item dropdown">-->
+<!--                    <a class="nav-link dropdown-toggle text-light" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">-->
+<!--                        {{ item.text }}-->
+<!--                    </a>-->
+<!--                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">-->
+<!--                        {% for sublink in item.sublinks %}-->
+<!--                        <li><a class="dropdown-item " href="{{ sublink.url }}">{{ sublink.text }}</a></li>-->
+<!--                        {% endfor %}-->
+<!--                    </ul>-->
+<!--                </li>-->
+<!--                {% else %}-->
+<!--                <li class="nav-item">-->
+<!--                    <a class="nav-link text-light" href="{{ item.url }}">{{ item.text }}</a>-->
+<!--                </li>-->
+<!--                {% endif %}-->
+<!--                {% endfor %}-->
+
+<!--            </ul>-->
+<!--        </div>-->
+<!--    </div>-->
+<!--</nav>-->
+
+  <header class="w-75 mx-auto text-center text-lg mt-3 mb-4 text-white">
+    {% block header %}{% endblock %}
+  </header>
+
+ {% with messages = get_flashed_messages(with_categories=true) %}
+  {% if messages %}
+    {% for category, message in messages %}
+      <div class="alert alert-{{ category }} w-75 mx-auto text-center" role="alert">
+        <p>{{ message }}</p>
+      </div>
+    {% endfor %}
+  {% endif %}
+{% endwith %}
+
+
+<section class="content mx-auto w-75 my-4 pt-4">
+  {% block content %}{% endblock %}
+</section>
+
+{% block scripts %}{% endblock %}
+
+<footer class="text-white">
+<!--    <ul class="nav justify-content-center border-bottom pb-3 mb-3">-->
+<!--        {% for item in navbar %}-->
+<!--            {% if item.sublinks %}-->
+<!--                {% for sublink in item.sublinks %}-->
+<!--                    <li class="nav-item"><a class="nav-link text-light" href="{{ sublink.url }}">{{ sublink.text }}</a></li>-->
+<!--                {% endfor %}-->
+<!--            {% else %}-->
+<!--                <li class="nav-item">-->
+<!--                    <a class="nav-link text-light" href="{{ item.url }}">{{ item.text }}</a>-->
+<!--                </li>-->
+<!--            {% endif %}-->
+<!--        {% endfor %}-->
+
+<!--    </ul>-->
+    <p class="text-center text-white">©
+        <span id="year"></span> :)
+    </p>
+  </footer>
+</body>
+
+</html>
+

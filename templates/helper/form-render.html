@@ -1,0 +1,16 @@
+
+    {% macro render_field(field, wert) %}
+      <div class="mt-4">
+        <label for="exampleFormControlInput1" class="form-label block">{{ field.label }}</label>
+          {{ field(class='w-full p-2 border rounded-lg', value=wert)|safe }}
+         {% if field.errors %}
+        <ul class="alert alert-danger px-4">
+            {% for error in field.errors %}
+            <li>{{ error }}</li>
+            {% endfor %}
+        </ul>
+        {% endif %}
+    </div>
+    {% endmacro %}
+
+
