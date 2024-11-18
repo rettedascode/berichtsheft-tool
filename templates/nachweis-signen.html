@@ -1,26 +1,12 @@
-<!DOCTYPE html>
-<html lang="de">
+{% extends 'base.html' %}
+{% from "helper/form-render.html" import render_field %}
+{% block header %}
+  <h1>{% block title %}Nachweis anlegen{% endblock %}</h1>
+{% endblock %}
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ausbildungsberichtsheft</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://cdn.jsdelivr.net/npm/flowbite@2.5.2/dist/flowbite.min.js"></script>
+{% block content %}
 
-    <style>
-        figure.flex {
-            justify-content: center;
-        }
-        
-        figure.flex>figcaption {
-            width: 100%;
-        }
-    </style>
-</head>
-
-<body class="">
-    <div class="" style="background-color: #CF3476;">
+<div class="" style="background-color: #CF3476;">
         <div class="p-2 flex justify-between">
             <figure class="flex">
                 <a href="./azubi-index.html" class="w-full">
@@ -106,6 +92,5 @@
 
 
     </div>
-</body>
 
-</html>
+{% endblock %}
