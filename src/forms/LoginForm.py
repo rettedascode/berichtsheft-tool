@@ -26,7 +26,7 @@ class LoginForm(FlaskForm):
                 message="Der Name muss zwischen 3 und 40 Zeichen lang sein.")],
         render_kw={
             "placeholder": "Login"},
-        name="login")
+        name="username")
     password = PasswordField(
         'Password',
         validators=[
