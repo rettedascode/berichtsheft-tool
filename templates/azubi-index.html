@@ -37,16 +37,75 @@
             </div>
         </div>
 
-        <div class="mt-12 mx-auto w-full">
-            <ul class="md:w-2/4 w-5/6 space-y-1 list-none list-inside text-black bg-white mx-2 p-2 mx-auto rounded-lg">
-                {% for woche in range(1, 13) %}
-                  <li class="flex justify-between">
-                    KW {{woche}}
-                    <input type="checkbox" name="" id="" checked>
-                </li>
-                {% endfor %}
-            </ul>
+        <div class="mt-12 mx-auto w-full" id="nachweis-container">
+<!--            <ul class="md:w-2/4 w-5/6 space-y-1 list-none list-inside text-black bg-white mx-2 p-2 mx-auto rounded-lg">-->
+<!--                {% for woche in range(1, 13) %}-->
+<!--                  <li class="flex justify-between">-->
+<!--                    KW {{woche}}-->
+<!--                    <input type="checkbox" name="" id="" checked>-->
+<!--                </li>-->
+<!--                {% endfor %}-->
+<!--            </ul>-->
 
         </div>
     </div>
+<script>
+    // Class Nachweis.
+    class Nachweis {
+        constructor(name, signed) {
+            this.name = name;
+            this.signed = signed
+        }
+        // Getter Setter.
+        getName () {
+            return this.name;
+        }
+        setName (name) {
+            this.name = name;
+            return this;
+        }
+        getSigned () {
+            return this.signed;
+        }
+        setSigned (signed) {
+            this.signed = signed;
+            return this;
+        }
+
+    }
+
+    // Daten für Nachweise.
+    let nachweisDaten = [
+        {name: 'Nachweis 1', signed: true},
+        {name: 'Nachweis 2', signed: true},
+        {name: 'Nachweis 3', signed: false},
+        {name: 'Nachweis 4', signed: true},
+        {name: 'Nachweis 5', signed: true},
+    ];
+
+    // Mit Schleife durchlaufen und für jeden Datensatz ein Objekt erstellen.
+    let nachweise = [];
+    nachweisDaten.forEach(row => {
+		nachweise.push(new Nachweis(row.name, row.signed));
+	})
+console.log(nachweise)
+    nachweise.forEach(nachweis => {
+        let nachweisContainer = document.getElementById('nachweis-container');
+        let element = document.createElement('ul')
+        let inhalt = document.createElement('li')
+        let checked = document.createElement('input')
+
+        element.setAttribute('class', 'md:w-2/4 w-5/6 space-y-1 list-none list-inside text-black bg-white mx-2 p-2 mx-auto rounded-lg')
+        inhalt.setAttribute('class', 'flex justify-between')
+        checked.setAttribute('type', 'checkbox')
+        checked.setAttribute('checked', nachweis.signed)
+
+        inhalt.append(checked)
+        element.append(inhalt)
+        nachweisContainer.append(element)
+
+
+    })
+    //console.log(nachweise)
+</script>
 {% endblock %}
